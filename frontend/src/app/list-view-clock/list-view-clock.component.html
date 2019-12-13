@@ -1,0 +1,46 @@
+<table>
+	<thead>
+		<tr>
+			<th>
+				Nazwa
+			</th>
+			<th>
+				Opis
+			</th>
+			<th>
+				Kolor
+			</th>
+			<th>
+				Producent
+			</th>
+			<th>
+				Waga [g]
+			</th>
+			<th>
+				Zdjęcie
+			</th>
+		</tr>
+	</thead>
+	<tr *ngFor="let i of clock">
+		<td>
+			{{ i.Name }}
+        </td>
+		<td>
+			{{ i.Description }}
+		</td>
+		<td>
+			{{ i.Colour }}
+		</td>
+		<td>
+			{{ i.Manufacturer }}
+		</td>
+		<td>
+			{{ i.Weight }}
+		</td>
+		<td>
+			<img width= "200" height = "200" src="{{i.Link}}">
+		</td>
+	</tr>
+</table>
+
+<button [routerLink]="['/add']" > Dodaj </button>

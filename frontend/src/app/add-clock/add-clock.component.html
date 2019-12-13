@@ -1,0 +1,31 @@
+<div class="container">
+    <form (ngSubmit)="submit()" #form="ngForm">
+      <p>Name<input type="text" name="name" [(ngModel)]="clock.Name" /></p>
+      <p>Description<input type="text" name="description" [(ngModel)]="clock.Description" /></p>
+      <p>
+        Colour<input
+          type="text"
+          name="colour"
+          [(ngModel)]="clock.Colour"
+        />
+      </p>
+      <p>
+        Manufacturer<input
+          type="text"
+          name="manufacturer"
+          [(ngModel)]="clock.Manufacturer"
+        />
+      </p>
+      <p>
+        Weight<input
+          type="text"
+          name="weight"
+          [(ngModel)]="clock.Weight"
+        />
+      </p>
+      <input type="submit" value="Zapisz" />
+    </form>
+    <br>
+  <button [routerLink]="['/list']" > Cofnij </button>
+  </div>
+  

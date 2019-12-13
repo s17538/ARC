@@ -1,0 +1,5 @@
+dispatch:
+  - url: "*/api/v1/*"
+    service: backend-api-v1
+  - url: "*/api/v2/*"
+    service: backend-api-v2\]

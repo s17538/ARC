@@ -1,0 +1,31 @@
+runtime: python37
+instance_class: F1
+service: default
+handlers:
+  - url: /
+    static_files: index.html
+    upload: index.html
+
+  - url: /favicon.ico
+    static_files: favicon.ico
+    upload: favicon.ico
+
+
+  - url: /((?:main-es|polyfills-es|runtime-es|styles\.)(?:2015\.|5\.)?[a-zA-Z0-9]*\.js)
+    static_files: \1
+    upload: ((?:main-es|polyfills-es|runtime-es|styles\.)(?:2015\.|5\.)?[a-zA-Z0-9]*\.js)
+    mime_type: application/javascript
+
+  - url: /((?:main-es|polyfills-es|runtime-es|styles\.)(?:2015\.|5\.)?[a-zA-Z0-9]*\.css)
+    static_files: \1
+    upload: ((?:main-es|polyfills-es|runtime-es|styles\.)(?:2015\.|5\.)?[a-zA-Z0-9]*\.css)
+
+  - url: '/assets/(.*)'
+    expiration: 10000
+    static_files: assets/\1
+    upload: 'assets/(.*)'
+
+
+  - url: /(.*)
+    static_files: index.html
+    upload: index.html
